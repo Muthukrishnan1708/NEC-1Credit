@@ -1,1 +1,23 @@
+version: '3.8'
+
+services:
+  personal-api:
+    image: muthu600/22it023-personal-api
+    ports:
+      - "5000:5000"
+    command: ["python", "personal-api.py"]  # Ensures correct script runs
+    depends_on:
+      - ml-model
+
+  ml-model:
+    image: muthu600/22it023-ml-model
+    ports:
+      - "6000:6000"
+    command: ["python", "ml-model.py"]  # Ensures correct script runs
+
+  personl-api:
+    image: pranesh2005/22it032-personl-api
+    ports:
+      - "7000:7000"
+    command: ["python", "personal-api.py"]  # Ensure correct script
 Update this file to add the content
